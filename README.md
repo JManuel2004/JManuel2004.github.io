@@ -12,6 +12,11 @@ Abre `projects.js` y copia un bloque dentro de `window.PROJECTS`. El orden del a
   year: "2026",
   kicker: "Pipeline de datos",
   summary: "Una frase de qué problema resuelve y cómo está armado.",
+  flow: {
+    entra: "Qué entra al pipeline.",
+    transforma: "Qué decisión o proceso lo cambia.",
+    sale: "Qué queda al final."
+  },
   points: [
     "Una decisión concreta.",
     "Otra decisión concreta."
@@ -22,7 +27,7 @@ Abre `projects.js` y copia un bloque dentro de `window.PROJECTS`. El orden del a
 }
 ```
 
-`demo` lleva la URL del sitio si existe. Si no hay sitio, déjalo en `null`.
+`flow` es el contrato corto de la ficha: entra, se transforma, sale. `demo` lleva la URL del sitio si existe. Si no hay sitio, déjalo en `null`. Con URL, la ficha marca el proyecto como en producción.
 
 Después:
 

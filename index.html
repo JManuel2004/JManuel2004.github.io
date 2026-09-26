@@ -8,10 +8,12 @@
       name="description"
       content="Portafolio de Manuel Cardona, estudiante de Ingeniería de Sistemas en la Universidad Icesi, con el eje en ingeniería de datos."
     />
+    <meta name="theme-color" content="#f4f6f4" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -29,19 +31,37 @@
 
     <main>
       <section id="inicio" class="hero">
-        <p class="eyebrow">Universidad Icesi · Cali</p>
-        <h1>Ingeniería de sistemas, con el eje en datos.</h1>
-        <p class="lede">
-          Estudio Ingeniería de Sistemas y me muevo hacia ingeniería de datos.
-          Me interesa el trabajo con un contrato claro: qué entra, qué se
-          transforma y qué sale, de forma que otra persona pueda ejecutarlo
-          sin reconstruir el contexto.
-        </p>
-        <p class="actions">
-          <a class="button" href="#trabajo">Ver proyectos</a>
-          <a href="https://github.com/JManuel2004">GitHub</a>
-          <a href="https://linkedin.com/in/manuel-cardona-0b9169255">LinkedIn</a>
-        </p>
+        <div class="hero-copy">
+          <p class="eyebrow">Universidad Icesi · Cali</p>
+          <h1>Ingeniería de sistemas, con el eje en datos.</h1>
+          <p class="lede">
+            Estudio Ingeniería de Sistemas y me muevo hacia ingeniería de datos.
+            Me interesa el trabajo con un contrato claro: qué entra, qué se
+            transforma y qué sale, de forma que otra persona pueda ejecutarlo
+            sin reconstruir el contexto.
+          </p>
+          <p class="actions">
+            <a class="button" href="#trabajo">Ver proyectos</a>
+            <a href="https://github.com/JManuel2004">GitHub</a>
+            <a href="https://linkedin.com/in/manuel-cardona-0b9169255">LinkedIn</a>
+          </p>
+        </div>
+        <aside class="spec">
+          <dl>
+            <div>
+              <dt>Práctica</dt>
+              <dd>Ingeniería de datos, 2027-1.</dd>
+            </div>
+            <div>
+              <dt>Construyo con</dt>
+              <dd>Python, SQL, Spark y FastAPI.</dd>
+            </div>
+            <div>
+              <dt>Estoy aprendiendo</dt>
+              <dd>SQL avanzado, dbt, Airflow, modelado dimensional y bases de AWS.</dd>
+            </div>
+          </dl>
+        </aside>
       </section>
 
       <section id="trabajo" class="band">
@@ -52,45 +72,51 @@
         <div id="project-list"></div>
       </section>
 
-      <section id="enfoque" class="band split">
-        <div>
+      <section id="enfoque" class="band">
+        <div class="section-head">
           <h2>Enfoque</h2>
-          <p>
-            Busco una práctica en ingeniería de datos para 2027-1. Mientras
-            tanto armo pipelines, modelos y backends que se puedan leer
-            después de la entrega.
-          </p>
+          <div>
+            <p>
+              Busco una práctica en ingeniería de datos para 2027-1. Mientras
+              tanto armo pipelines, modelos y backends que se puedan leer
+              después de la entrega.
+            </p>
+            <dl class="facts">
+              <div>
+                <dt>Construyo con</dt>
+                <dd>Python, SQL, Spark y FastAPI.</dd>
+              </div>
+              <div>
+                <dt>También uso</dt>
+                <dd>Java, React, Docker y PostgreSQL.</dd>
+              </div>
+              <div>
+                <dt>Estoy aprendiendo</dt>
+                <dd>SQL avanzado, dbt, Airflow, modelado dimensional y bases de AWS.</dd>
+              </div>
+              <div>
+                <dt>Cómo trabajo</dt>
+                <dd>Commits chicos, contratos de datos explícitos y documentación que sirve en frío.</dd>
+              </div>
+            </dl>
+          </div>
         </div>
-        <dl class="facts">
-          <div>
-            <dt>Construyo con</dt>
-            <dd>Python, SQL, Spark y FastAPI.</dd>
-          </div>
-          <div>
-            <dt>También uso</dt>
-            <dd>Java, React, Docker y PostgreSQL.</dd>
-          </div>
-          <div>
-            <dt>Estoy aprendiendo</dt>
-            <dd>SQL avanzado, dbt, Airflow, modelado dimensional y bases de AWS.</dd>
-          </div>
-          <div>
-            <dt>Cómo trabajo</dt>
-            <dd>Commits chicos, contratos de datos explícitos y documentación que sirve en frío.</dd>
-          </div>
-        </dl>
       </section>
 
-      <section id="contacto" class="band contact">
-        <h2>Contacto</h2>
-        <p>
-          Abierto a prácticas, asistencia de investigación y proyectos de
-          datos o backend.
-        </p>
-        <p class="actions">
-          <a class="button" href="https://linkedin.com/in/manuel-cardona-0b9169255">Escribir por LinkedIn</a>
-          <a href="https://github.com/JManuel2004">github.com/JManuel2004</a>
-        </p>
+      <section id="contacto" class="band">
+        <div class="section-head">
+          <h2>Contacto</h2>
+          <div>
+            <p>
+              Abierto a prácticas, asistencia de investigación y proyectos de
+              datos o backend.
+            </p>
+            <p class="actions">
+              <a class="button" href="https://linkedin.com/in/manuel-cardona-0b9169255">Escribir por LinkedIn</a>
+              <a href="https://github.com/JManuel2004">github.com/JManuel2004</a>
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 

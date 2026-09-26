@@ -1,6 +1,7 @@
 // Cada objeto es un proyecto. Para agregar otro, copia un bloque,
 // cambia los campos y vuelve a subir este archivo.
 // demo puede quedar en null si todavía no hay un sitio público.
+// Si demo tiene URL, la ficha marca el proyecto como en producción.
 window.PROJECTS = [
   {
     title: "Clasificación de ingresos con Spark ML",
@@ -8,6 +9,11 @@ window.PROJECTS = [
     kicker: "Pipeline de datos",
     summary:
       "Pipeline por lotes en PySpark que estima si un ingreso supera los 50 000. El esquema es explícito, el holdout ocurre antes de ajustar el modelo y los pesos de clase se calculan solo en el pliegue de entrenamiento.",
+    flow: {
+      entra: "Datos sintéticos de personas, con esquema explícito.",
+      transforma: "Pipeline por lotes en PySpark. El holdout queda separado antes de ajustar el modelo.",
+      sale: "Una estimación de si el ingreso supera los 50 000."
+    },
     points: [
       "fnlwgt queda fuera del vector: es un peso muestral, no un atributo de la persona.",
       "La clase positiva es siempre >50K, aunque deje de ser la minoritaria.",
@@ -23,6 +29,11 @@ window.PROJECTS = [
     kicker: "Modelo estadístico",
     summary:
       "Motor para partidos del Mundial 2026. Combina Dixon-Coles, forma con decaimiento temporal y un prior bayesiano del ranking FIFA. El resultado sale del modelo, sin un modelo de lenguaje en el camino.",
+    flow: {
+      entra: "Partidos del Mundial 2026, forma reciente y el ranking FIFA.",
+      transforma: "Dixon-Coles, decaimiento temporal y un prior bayesiano del ranking.",
+      sale: "Probabilidades de marcador, calibradas con Brier Score."
+    },
     points: [
       "Matriz de marcadores de Poisson y calibración con Brier Score.",
       "Fuentes en vivo con respaldo cuando una API no responde.",
@@ -38,6 +49,11 @@ window.PROJECTS = [
     kicker: "Analítica",
     summary:
       "Pipeline sobre historial de compras: carga incremental con registro de corridas, segmentación y una recomendación a partir de los productos ya vistos.",
+    flow: {
+      entra: "Historial de compras, con carga incremental y registro de corridas.",
+      transforma: "Segmentación con K-means sobre el comportamiento de compra.",
+      sale: "Segmentos de clientes y una recomendación a partir de lo ya visto."
+    },
     points: [
       "El procesamiento incremental evita rehacer toda la historia en cada corrida.",
       "La segmentación usa K-means sobre el comportamiento de compra.",
@@ -53,6 +69,11 @@ window.PROJECTS = [
     kicker: "Producto",
     summary:
       "Aplicación para leer la madurez de una iniciativa de innovación digital con el marco KTH IRL. La hice para INNLAB, en la Universidad Icesi.",
+    flow: {
+      entra: "48 afirmaciones en seis dimensiones del marco KTH IRL.",
+      transforma: "Lectura de la madurez de una iniciativa de innovación digital.",
+      sale: "Un perfil con cuellos de botella y desbalances entre dimensiones."
+    },
     points: [
       "Un cuestionario de 48 afirmaciones en seis dimensiones.",
       "El perfil marca cuellos de botella y desbalances entre dimensiones.",
