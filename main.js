@@ -15,6 +15,14 @@
     return "<div><dt>" + escapeHtml(label) + "</dt><dd>" + escapeHtml(text) + "</dd></div>";
   }
 
+  function outbound(href, label, className) {
+    return (
+      '<a class="' + className + '" href="' + escapeHtml(href) + '" target="_blank" rel="noopener noreferrer">' +
+      escapeHtml(label) +
+      "<span aria-hidden=\"true\">→</span></a>"
+    );
+  }
+
   projects.forEach(function (project, index) {
     var article = document.createElement("article");
     article.className = "project";
@@ -39,16 +47,13 @@
     if (flowHtml) flowHtml = '<dl class="flow">' + flowHtml + "</dl>";
 
     var status = project.demo ? '<span class="status">En producción</span>' : "";
-    var links = '<a href="' + escapeHtml(project.repo) + '">Repositorio</a>';
-    if (project.demo) {
-      links += '<a class="live" href="' + escapeHtml(project.demo) + '">Sitio</a>';
-    }
+    var links = outbound(project.repo, "Repositorio", "");
+    if (project.demo) links += outbound(project.demo, "Sitio", "live");
 
     article.innerHTML =
-      '<p class="project-index">' + number + "</p>" +
       '<div class="project-body">' +
-      '<p class="kicker"><span>' + escapeHtml(project.kicker) + " · " + escapeHtml(project.year) + "</span>" + status + "</p>" +
-      "<h3>" + escapeHtml(project.title) + "</h3>" +
+      '<p class="kicker"><span>' + number + " · " + escapeHtml(project.kicker) + " · " + escapeHtml(project.year) + "</span>" + status + "</p>" +
+      "<h3><a href=\"" + escapeHtml(project.repo) + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + escapeHtml(project.title) + "</a></h3>" +
       '<p class="summary">' + escapeHtml(project.summary) + "</p>" +
       flowHtml +
       '<ul class="points">' + points + "</ul>" +
@@ -58,6 +63,33 @@
 
     list.appendChild(article);
   });
+
+  var copyButton = document.getElementById("copy-mail");
+  if (copyButton) {
+    var address = "manuelcardona0206@gmail.com";
+    copyButton.addEventListener("click", function () {
+      function done() {
+        copyButton.textContent = "Copiado";
+        window.setTimeout(function () {
+          copyButton.textContent = "Copiar";
+        }, 1600);
+      }
+      function fallback() {
+        var field = document.createElement("textarea");
+        field.value = address;
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand("copy");
+        field.remove();
+        done();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(address).then(done).catch(fallback);
+        return;
+      }
+      fallback();
+    });
+  }
 
   var navLinks = Array.prototype.slice.call(document.querySelectorAll("nav a"));
   if (!("IntersectionObserver" in window)) return;
